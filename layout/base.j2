@@ -1,0 +1,116 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+  <meta charset="{{ resource.meta.charset }}">
+
+  <title>{% block title %}{% if resource.slug!="index" %}{{ resource.meta.title }} | {% endif %}Wumpus World{% endblock %}</title>
+  <meta name="description" content="{{ resource.meta.description }}">
+  <meta name="author" content="{{ resource.meta.author }}">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{{ media_url('css/style.css') }}">
+  <script src="{{ media_url('js/modernizr-2.6.1.min.js') }}"></script>
+
+  <!-- Details at /humans.txt -->
+
+</head>
+<body id="{{ resource.meta.id if resource.meta.id else resource.slug }}" onload="prettyPrint()">
+
+  {% block container %}
+  <header>
+    <div class="container">
+      {% block header -%}<h1><a href="{{ content_url('index.html') }}">IHSS-1964 Minds &amp; Machines</a></h1>{%- endblock header %}
+      {% block nav -%}
+      <!--<nav class="six columns">
+        <ul id="nav" role="navigation" class="nav-bar right">
+          {% for res in menu -%}<li><a href="{{ content_url(res.url) }}">{{ res.title }}</a></li>{%- endfor %}
+        </ul>
+      </nav>-->
+      {%- endblock nav %}
+      {% if (resource.meta.title == 'Course Description') %}
+      <aside class="row-fluid">
+        <div class="span3">
+          <i class="gen-enclosed foundicon-idea left"></i>
+        </div>
+        <div class="span9">
+          <h1>The Wumpus World</h1>
+          <p>A novel exploration of artificial intelligence, robotics engineering, and LEGO.</p>
+        </div>
+      </aside>
+      {% endif %}
+    </div>
+  </header>
+
+  {% block hero -%}{%- endblock hero %}
+
+  <div class="container">
+
+    <article id="{{ resource.slug }}" role="main" class="row-fluid">
+      <nav class="span3">
+        <ul id="navbar" role="navigation" data-spy="affix" data-offset-top="160" >
+          <!--<h1>M&amp;M &raquo; Wumpus World</h1>-->
+          {% for grp, res_walker in site.content.walk_section_groups() %}
+          {% if not (grp.description == "Site Section") -%}
+          <li{% if (grp.name == resource.meta.section) %} class="active"{% endif -%}>
+            {{ grp.description }}{% if (grp.name == resource.meta.section) %} &raquo;{% endif %}
+            <ul>
+              {% for res in res_walker -%}
+                <li><a {% if (res.url == resource.url) %}class="active" {%
+                  endif -%}href="{{ res.full_url }}" title="{{ res.meta.title }}">{{
+                  res.meta.title|replace("-"," ") }}</a></li>
+              {%- endfor %}
+            </ul>
+          </li>
+          {%- endif %}
+          {% endfor %}
+        </ul>
+        <!--<small>Using <a href="https://github.com/AsherGlick/Wumpus-Arduino-Redux" rel="nofollow">Wumpus Arduino Redux</a> v0</small>-->
+      </nav>
+      <section class="span9 well">
+        <div class="row-fluid">
+          {% filter typogrify -%}{% filter markdown -%}{% block content -%}{%- endblock %}{%- endfilter %}{%- endfilter %}
+        </div>
+      </section>
+    </article>
+    {% endblock container %}
+
+    {% if not resource.meta.title.startswith('Error') %}
+    <footer class="row">
+      <span class="span3">&nbsp;</span>
+      <small class="span9">Content &copy; 2012 Bram et al., except as indicated. <a href="https://github.com/theopak/Wumpus-Arduino-Redux_documentation">Open Source</a> web design by <a href="http://theopak.com">Theo Pak</a>.</small>
+    </footer>
+    {% endif %}
+
+  </div>
+
+
+  {% block js %}
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write("<script src='{{ media_url('js/jquery-1.7.2.min.js') }}'>\x3C/script>")</script>
+
+  <!-- scripts are concatenated, evaluated, and minified using hyde.ext.plugins.combine and lessc -->
+  <script src="{{ media_url('js/main.js') }}"></script>
+  <script src="{{ media_url('js/bootstrap.min.js') }}"></script>
+  <!-- end scripts-->
+
+  {% if site.config.mode=="production" %}
+    <script>
+      var _gaq=[['_setAccount','{{ site.meta.ga_tracking_code }}'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  {% endif %}
+
+  {% endblock js %}
+
+
+</body>
+</html>

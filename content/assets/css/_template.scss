@@ -1,0 +1,186 @@
+/**
+ * _template.scss
+ * AUTH:      Theodore X. Pak <theopak.com>
+ * MODIFIED:  2012-10-14
+ * DESC:      Primary styles.
+ */
+
+
+
+/* GLOBAL ================================================================= */
+body {
+  min-width: 240px;
+  background-color: #F0EFE7;
+  font-family: 'SourceSansPro',Helvetica,Arial,sans-serif;
+}
+.container section {
+  margin: 0 auto 1em;
+  padding-top: 15px;
+  &.well {
+    background-color: #FCFCFA;
+    //border: solid 1px #E2E0D8;
+    //border-radius: 4px;
+    box-shadow: 0 0px 3px #F0EFE7;
+  }
+  h1 {
+    color: #444;
+    text-shadow: 0 2px 0 white;
+  }
+  h1:first-child {
+    margin-top: 0;
+  }
+}
+small {
+  color: #999;
+  font-size: .8em;
+  a, a:visited, a:not(:hover) {
+    color: #666;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+li pre, li code {
+  margin-left: 1.25em;
+}
+pre.prettyprint, code.prettyprint {
+  background-color: #333;
+  font-family: monospace !important;
+}
+
+
+/* HEADER ================================================================= */
+body>header {
+  margin: 0 0 3em;
+  padding: 5em 0 2em;
+  background: lighten($color1,5) url('../img/use_your_illusion.png') repeat center top fixed;
+  border-bottom: 1px solid $color1;
+  color: $color0;
+  h1, h1 a, h1 a:hover, h2, h3 {
+    color: $color0;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 #FCFCFA;
+  }
+  .row-fluid {
+    padding: 2em 0 0;
+    background: transparent;
+    color: $color0;
+    h1, p {
+      font-family: 'Museo Sans',sans-serif;
+      font-size: 2em;
+      padding: 0;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    i {
+      padding-right: 10px;
+      font-size: 8em;
+    }
+  }
+}
+nav small {
+  display: block;
+  margin-bottom: 1em;
+  padding: 2px 6px;
+}
+nav #navbar {
+  margin-top: .5em;
+  background-color: transparent;
+  color: #FAFAFA;
+  &.affix {
+    top: 15px;
+  }
+  h1 {
+    width: 100%;
+    border-bottom: 1px solid #999;
+    font: 1em/1.5em Arial;
+    text-align: center;
+    text-transform: uppercase;
+    color: #999;
+  }
+  li {
+    padding: 0;
+    border: none;
+    font-weight: bold;
+    list-style: none;
+    color: $color1;
+    text-shadow: 0 -1px 0 $color0;
+    a, a:visited {
+      padding: .25em 0;
+      border: none;
+      border-top: none !important;
+      color: #333;
+      line-height: 1.2em;
+      font-weight: bold;
+      text-decoration: none;
+      text-shadow: none;
+      &.active {
+        background-color: transparent;
+        border-right: none;
+        color: #5AB0D4;
+      }
+      &.active, &:hover {
+        font-weight: bold;
+      }
+    }
+    ul {
+      margin: 0 0 .75em 1em;
+      padding: 0;
+      a {
+        background-color: transparent;
+        border: none;
+        font-weight: normal;
+        font-style: normal;
+        &.active {
+          color: #5AB0D4;
+        }
+      }
+    }
+    &:hover {
+      background-color: transparent;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+
+/* MAIN =================================================================== */
+.row, .row-fluid {
+  padding-bottom: 10px;
+  h1, h2, h3, h4, h5 {
+    font-size: 1.3em;
+  }
+  .hero-unit {
+    position: relative;
+    margin: -15px -19px 0;
+    font-size: 1.3em;
+    line-height: 1.2em;
+    border: none;
+    border-bottom: 1px solid #E2E0D8;
+    border-radius: 0;
+    i.gen-enclosed {
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      width: 100%;
+      color: #333;
+      font-size: 50px;
+      line-height: 50px;
+      text-align: center;
+    }
+  }
+}
+
+
+/* FOOTER ================================================================= */
+footer.row {
+  padding-bottom: 3em;
+  small {
+    padding-bottom: 40px;
+    background: transparent url('../img/rcos_rensselaer-crop.png') no-repeat 15px bottom;
+    font-size: 1em;
+  }
+}

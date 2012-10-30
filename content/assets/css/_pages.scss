@@ -1,0 +1,24 @@
+/**
+ * _pages.scss
+ * AUTH:      Theodore X. Pak <theopak.com>
+ * MODIFIED:  2012-10-14
+ * DESC:      Styles specific to pages (for Minds & Machines).
+ */
+
+
+
+.bram-robot {
+  .well {
+    height: 180px;
+    overflow: hidden;
+    background: whiteSmoke no-repeat center top;
+    &:hover {
+      box-shadow: 0 0 7px $color1;
+    }
+  }
+  a {
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 0 0 5px $color1;
+  }
+}
