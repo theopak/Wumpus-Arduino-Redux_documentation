@@ -1,0 +1,84 @@
+---
+index: 2
+title: "Getting Started"
+---
+
+
+# Downloading and Installing Software
+Go to: <http://www.rpi.edu/~heuveb/M&M/WumpusWorld/WumpusWorld.htm>
+
+1. Download Interactive C (unzip and run to install Interactive C 8.0)
+2. Download Driver for USB-to-Serial (unzip and install; may need to restart computer)
+3. Download Sample Interactive C Programs) (unzip and move to convenient location)
+
+
+# Connecting the Hardware
+1. Plug the wall power adapter into an outlet and the other end to the small jack on the board
+labeled “Handy Board Serial Interface.” When you do so a small red LED labeled “PWR” should
+light up.
+2. Plug one end of the telephone cord into the serial interface board and the other into the Handy
+Board
+3. Plug the USB cable into an available USB port on your laptop.
+
+
+# Starting Interactive C and Downloading Firmware to HandyBoard
+1. Run Interactive C
+2. Select Handyboard (with expansion) in the window that pops up
+3. Click “com4” in the Port Selection dialog and press “Connect Now”
+4. Click “Download Firmware” when the next dialog appears
+5. Click on the Communication Check: Confirm the SER light blinks (once) on the serial connector
+6. If the SER light does not blink in response to the Communication Check, Cancel and change port
+7. under Settings, and repeat process
+8. If the SER light does blink, make sure the power is off on the HandyBoard, and continue
+9. While holding down the STOP button on the HandyBoard, turn the Handy Board on
+10. Wait 2 seconds before releasing the STOP button
+11. Confirm both the BATT and PWR lights remain off
+12. Click “Download Firmware”
+13. Wait about 20 seconds while it is downloading the firmware and downloading the library
+14. Now it should say “Download successful” at the bottom of the Interactive C window, and a
+message should be displayed on the LCD of the handy board.
+
+
+# Using the Command Line in Interactive C
+- Click on Command Tab
+- At the bottom of the window there is a big textbox, this is the command line. You can enter single line commands here and the handy board will execute them.
+- Try it out, type:
+    beep();
+- Then press “Enter” on your keyboard, the board should beep
+- You can use this to test motors and sensors etc.
+
+
+# Writing, Downloading, and Running Programs in Interactive C
+1. Create a new program by clicking the "New" button
+2. You can use the following skeleton for your program:
+    <pre class="prettyprint">
+    #use sony-ir.icb
+
+    void main() {
+      while(1) {
+        sony_init(1);
+        printf("\nMy Program Name\n"); //You can change this to be whatever
+        while(!start_button());
+        printf(“Running\n”);
+        while(!stop_button()) {
+          //YOUR CODE GOES HERE
+          //it will run until the stop button is pressed
+        }
+        sony_init(0);
+      }
+    }
+    </pre>
+3. Press "Save" and save your source file somewhere
+4. Press "Check" and make sure there are no errors, if there are try and debug them
+5. When it says "File compiled with no errors" then click "OK"
+6. Click "Download" and wait for it to finish
+7. When it is done click "Run main" to run your program
+8. Click "Stop" to stop execution
+9. Every time you change your program you have to do steps 4-7 again
+
+
+# Running Your Program When Disconnected
+1. You can run your program without the Handy Board being connected the computer. To do so first turn off the handy board, then disconnect the telephone wire that is plugged into it.
+2. When it turns on it will immediately start executing your main() function, and if you used the code skeleton above should display “My Program Name” or whatever you put in that first printf statement.
+3. When you press start it should print “Started” and then run your code until you press the stop button when it will display “My Program Name” again and wait for you to press the start button to run it again. This will continue until you turn it off.
+4. If it doesn’t turn on, you have to charge the battery by directly plugging the power cord into the handy board power jack.
