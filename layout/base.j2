@@ -7,9 +7,8 @@
 
   <meta charset="{{ resource.meta.charset }}">
 
-  <title>{% block title %}{% if resource.slug!="index" %}{{ resource.meta.title }} | {% endif %}Wumpus World{% endblock %}</title>
+  <title>{% block title %}{% if resource.slug!="index" %}{{ resource.meta.title }} | {% endif %}Minds &amp; Machines at RPI{% endblock %}</title>
   <meta name="description" content="{{ resource.meta.description }}">
-  <meta name="author" content="{{ resource.meta.author }}">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -38,8 +37,9 @@
           <i class="gen-enclosed foundicon-idea left"></i>
         </div>
         <div class="span9">
-          <h1>The Wumpus World</h1>
-          <p>A novel exploration of artificial intelligence, robotics engineering, and LEGO.</p>
+          <h1>Students who enter the Minds &amp; Machines program perform cutting-edge scientific research.</h1>
+          <p>They explore the nature of reasoning, perception, and learning, develop computational cognitive models, create intelligent artificial agents, engineer cognitive technology, and address philosophical questions about the fundamental nature of the human mind.</p>
+          <!-- text via http://www.rpi.edu/academics/interdisciplinary/mindsmachines.html -->
         </div>
       </aside>
       {% endif %}
@@ -61,7 +61,7 @@
             <ul>
               {% for res in res_walker -%}
                 <li><a {% if (res.url == resource.url) %}class="active" {%
-                  endif -%}href="{{ res.full_url }}" title="{{ res.meta.title }}">{{
+                  endif -%}href="{{ res.full_url }}" title="{{ res.meta.title|replace("-"," ") }}">{{
                   res.meta.title|replace("-"," ") }}</a></li>
               {%- endfor %}
             </ul>
