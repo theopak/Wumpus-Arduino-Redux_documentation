@@ -7,9 +7,21 @@
 
 
 
-/* === SASS VARS ============================================================ */
-$color0     : #fafafa;
-$color1     : #333;
+/* === SASS PREPROCESSOR ==================================================== */
+$color0     : #fafafa;  // bg color
+$color1     : #333;     // fg color
+$color2     : #08C;     // accent color
+@mixin filter($var) {
+       -o-filter: $var;
+      -ms-filter: $var;
+     -moz-filter: $var;
+  -webkit-filter: $var;
+          filter: $var;
+}
+@mixin transition($property, $duration, $function ) {
+  -webkit-transition: $property $duration $function;
+          transition: $property $duration $function;
+}
 
 
 

@@ -52,7 +52,7 @@ pre.prettyprint, code.prettyprint {
 body>header {
   margin: 0 0 45px;
   padding: 5em 0 2em;
-  background: lighten($color1,5) url('../img/use_your_illusion.png') repeat center top fixed;
+  background: lighten($color1,5) url('../img/use_your_illusion.png') repeat center top;
   border-bottom: 1px solid $color1;
   color: $color0;
   h1, h1 a, h1 a:hover, h2, h3 {

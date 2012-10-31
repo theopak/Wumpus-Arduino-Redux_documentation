@@ -18,6 +18,13 @@
   a {
     font-size: 2em;
     font-weight: bold;
-    text-shadow: 0 0 5px $color1;
+    text-shadow: 0 0 3px $color1;
+    color: $color0;
+    @include transition( all, 5s, ease );
+    &:hover {
+      text-decoration: none;
+      color: $color2;
+      @include filter( saturate(5) );
+    }
   }
 }
