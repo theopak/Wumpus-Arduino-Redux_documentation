@@ -1,8 +1,11 @@
 ---
 index: 1
 title: "Course Description"
+default_block: none  # because there is also a hero block on this page
 ---
 
+
+{% block content %}
 
 # Course Description
 
@@ -16,3 +19,19 @@ title: "Course Description"
 </div>
 
 If you are interested in exploring some of these conceptual and ethical questions regarding the nature of mind, this communication intensive course will get you jump-started. Students meet twice a week in small sections to have class discussions and debates about these issues. On thursday evenings, all sections come together to listen to a guest speaker talk about their research on the frontiers of artificial intelligence and cognitive science, or to watch a movie that is particularly relevant to the topic at hand. During the course, students will learn how to think critically, and how to express philosophical arguments in writing or through oral presentation. Final projects are hands-on: build an "intelligent" Lego Robot, write an AI program (one option is to program a Connect-4 AI), or actively participate in a cognitive psychology experiment.
+
+{% endblock content %}
+
+
+{% block hero %}
+<aside class="row-fluid">
+  <div class="span3">
+    <img src="http://placehold.it/270x120" alt="placeholder" />
+  </div>
+  <div class="span9">
+    <h1>Minds &amp; Machines</h1>
+    <p>Students in this course <strong>explore the nature of reasoning, perception, and learning</strong>, develop computational cognitive models, create intelligent artificial agents, engineer cognitive technology, and address philosophical questions about the fundamental nature of the human mind. <a href="{{ content_url('syllabus.html') }}">Read the Syllabus &raquo;</a></p>
+    <!-- above text adapted from http://www.rpi.edu/academics/interdisciplinary/mindsmachines.html -->
+  </div>
+</aside>
+{% endblock hero %}

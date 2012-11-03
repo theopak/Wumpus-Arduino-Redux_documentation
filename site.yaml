@@ -42,8 +42,8 @@ context:
         url: doc/index.html
 meta:
   nodemeta: meta.yaml
-  title: "Wumpus Arduino Redux"
-  author: "Asher Glick, Theodore X. Pak"
+  title: "Minds and Machines"
+  author: "Theodore X. Pak et al."
   charset: utf-8
   description: "Documentation for the 'Wumpus Arduino Redux'."
   ga_tracking_code: UA-XXXXXXXXX-X

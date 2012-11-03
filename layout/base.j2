@@ -7,10 +7,10 @@
 
   <meta charset="{{ resource.meta.charset }}">
 
-  <title>{% block title %}{% if resource.slug!="index" %}{{ resource.meta.title }} | {% endif %}Minds &amp; Machines at RPI{% endblock %}</title>
+  <title>{% block title %}{% if resource.slug!="index" %}{{ resource.meta.title }} | {% endif %}{{ site.meta.title }}{% endblock %}</title>
   <meta name="description" content="{{ resource.meta.description }}">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
   <link rel="stylesheet" href="{{ media_url('css/style.css') }}">
   <script src="{{ media_url('js/modernizr-2.6.1.min.js') }}"></script>
@@ -22,37 +22,20 @@
 
   {% block container %}
   <header>
-    <div class="container">
+    <div class="container hidden-phone">
       {% block header -%}<h1><a href="{{ content_url('index.html') }}">IHSS-1964 Minds &amp; Machines</a></h1>{%- endblock header %}
-      {% block nav -%}
-      <!--<nav class="six columns">
-        <ul id="nav" role="navigation" class="nav-bar right">
-          {% for res in menu -%}<li><a href="{{ content_url(res.url) }}">{{ res.title }}</a></li>{%- endfor %}
-        </ul>
-      </nav>-->
-      {%- endblock nav %}
-      {% if (resource.meta.title == 'Course Description') %}
-      <aside class="row-fluid">
-        <div class="span3">
-          <i class="gen-enclosed foundicon-idea left"></i>
-        </div>
-        <div class="span9">
-          <h1>Students who enter the Minds &amp; Machines program perform cutting-edge scientific research.</h1>
-          <p>They explore the nature of reasoning, perception, and learning, develop computational cognitive models, create intelligent artificial agents, engineer cognitive technology, and address philosophical questions about the fundamental nature of the human mind.</p>
-          <!-- text via http://www.rpi.edu/academics/interdisciplinary/mindsmachines.html -->
-        </div>
-      </aside>
-      {% endif %}
+      {% block hero -%}{%- endblock hero %}
     </div>
   </header>
 
-  {% block hero -%}{%- endblock hero %}
+
 
   <div class="container">
 
     <article id="{{ resource.slug }}" role="main" class="row-fluid">
       <nav class="span3">
         <ul id="navbar" role="navigation" data-spy="affix" data-offset-top="189" >
+          {% block nav -%}
           <!--<h1>M&amp;M &raquo; Wumpus World</h1>-->
           {% for grp, res_walker in site.content.walk_section_groups() %}
           {% if not (grp.description == "Site Section") -%}
@@ -68,6 +51,7 @@
           </li>
           {%- endif %}
           {% endfor %}
+          {%- endblock nav %}
         </ul>
         <!--<small>Using <a href="https://github.com/AsherGlick/Wumpus-Arduino-Redux" rel="nofollow">Wumpus Arduino Redux</a> v0</small>-->
       </nav>
