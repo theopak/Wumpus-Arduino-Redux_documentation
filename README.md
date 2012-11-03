@@ -23,22 +23,30 @@ $ hyde serve # optional, this command tests deploy on localhost:8080
 ### [WAR](https://github.com/AsherGlick/Wumpus-Arduino-Redux) API
 
 Asher Glick
+
 <glicka@rpi.edu>
+
 Rensselaer Polytechnic Institute Class of 2013
-GitHub: @AsherGlick
+
+GitHub: AsherGlick
 
 ### [WAR](https://github.com/AsherGlick/Wumpus-Arduino-Redux) PCB
 
 David Herbert
+
 <herbed@rpi.edu>
+
 Rensselaer Polytechnic Institute Class of 2013
 
 ### Documentation Website
 
 Theodore X. Pak
+
 <mail@theopak.com>
+
 Renssleaer Polytechnic Institute Class of 2015
-GitHub: @theopak
+
+GitHub: theopak
 
 
 ## License
