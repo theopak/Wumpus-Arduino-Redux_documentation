@@ -12,23 +12,6 @@ body {
   background-color: #F0EFE7;
   font-family: $font0;
 }
-.container section {
-  margin: 0 auto 1em;
-  &.well {
-    padding: 30px 40px;
-    background-color: #FCFCFA;
-    //border: solid 1px #E2E0D8;
-    //border-radius: 4px;
-    box-shadow: 0 0px 3px #F0EFE7;
-  }
-  h1 {
-    color: #444;
-    text-shadow: 0 2px 0 white;
-  }
-  h1:first-of-type {
-    margin-top: 0;
-  }
-}
 small {
   color: #999;
   font-size: .8em;
@@ -80,13 +63,9 @@ body>header {
     }
   }
 }
-nav small {
-  display: block;
-  margin-bottom: 1em;
-  padding: 2px 6px;
-}
 nav #navbar {
   margin-top: .5em;
+  padding: 0 20px;
   background-color: transparent;
   color: #FAFAFA;
   &.affix {
@@ -145,10 +124,32 @@ nav #navbar {
       border-bottom: none;
     }
   }
+  small {
+    display: block;
+    margin-bottom: 1em;
+    padding: 2px 6px;
+  }
 }
 
 
 /* MAIN =================================================================== */
+.container section {
+  margin: 0 auto 1em;
+  &.well {
+    padding: 30px 40px;
+    background-color: #FCFCFA;
+    //border: solid 1px #E2E0D8;
+    //border-radius: 4px;
+    box-shadow: 0 0px 3px #F0EFE7;
+  }
+  h1 {
+    color: #444;
+    text-shadow: 0 2px 0 white;
+  }
+  h1:first-of-type {
+    margin-top: 0;
+  }
+}
 .row, .row-fluid {
   padding-bottom: 10px;
   h1, h2, h3, h4, h5 {
@@ -185,5 +186,41 @@ footer.row {
     padding-bottom: 40px;
     background: transparent url('../img/rcos_rensselaer-crop.png') no-repeat 15px bottom;
     font-size: 1em;
+  }
+}
+
+
+/* RESPONSIVE DESIGN ELEMENTS ============================================= */
+@media (max-width: 767px) {
+  .affix {
+    position: static;
+  }
+  body>header {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: .8em;
+  }
+  .container section {
+    &.well {
+      padding: 15px 20px;
+    }
+  }
+  .row, .row-fluid {
+    h1, h2, h3, h4, h5 {
+      font-size: 1.2em;
+    }
+    .hero-unit {
+      margin: -14px -19px 45px;
+      padding: 2em 4em;
+      font-size: 1em;
+    }
+  }
+  footer.row {
+    font-size: .8em;
+    small {
+      background-image: none;
+    }
   }
 }
