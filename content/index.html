@@ -24,13 +24,13 @@ If you are interested in exploring some of these conceptual and ethical question
 
 
 {% block hero %}
-<aside class="row-fluid">
-  <div class="span3">
-    <img src="http://placehold.it/270x120" alt="placeholder" />
+<aside class="row-fluid hidden-phone">
+  <div class="span3" style="height:120px;overflow:hidden;">
+    <img src="{{ media_url('img/minds_machines_crop.png') }}" alt="Minds and Machines" />
   </div>
   <div class="span9">
     <h1>Minds &amp; Machines at Rensselaer Polytechnic Institute</h1>
-    <p>Students in this course <strong>explore the nature of reasoning, perception, and learning</strong>, develop computational cognitive models, create intelligent artificial agents, engineer cognitive technology, and address philosophical questions about the fundamental nature of the human mind. <a href="{{ content_url('syllabus.html') }}">Read the Syllabus &raquo;</a></p>
+    <p class="hidden-tablet">Students in this course <strong>explore the nature of reasoning, perception, and learning</strong>, develop computational cognitive models, create intelligent artificial agents, engineer cognitive technology, and address philosophical questions about the fundamental nature of the human mind. <a href="{{ content_url('syllabus.html') }}">Read the Syllabus &raquo;</a></p>
     <!-- above text adapted from http://www.rpi.edu/academics/interdisciplinary/mindsmachines.html -->
   </div>
 </aside>
