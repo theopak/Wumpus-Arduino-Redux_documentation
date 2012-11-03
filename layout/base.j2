@@ -34,7 +34,7 @@
 
     <article id="{{ resource.slug }}" role="main" class="row-fluid">
       <nav class="span3">
-        <ul id="navbar" class="unstyled" role="navigation" data-spy="affix" data-offset-top="189">
+        <ul id="navbar" class="unstyled clearfix" role="navigation" data-spy="affix" data-offset-top="189">
           {% block nav -%}
           <!--<h1>M&amp;M &raquo; Wumpus World</h1>-->
           {% for grp, res_walker in site.content.walk_section_groups() %}
@@ -64,8 +64,8 @@
 
     {% if not resource.meta.title.startswith('Error') %}
     <footer class="row">
-      <span class="span3">&nbsp;</span>
-      <small class="span9">Content &copy; 2012 Bram et al., except as indicated. <a href="https://github.com/theopak/Wumpus-Arduino-Redux_documentation">Open Source</a> web design by <a href="http://theopak.com">Theo Pak</a>.</small>
+      <span class="span3 hidden-phone">&nbsp;</span>
+      <small class="span9">Content &copy; 2012 Bram et al., except as indicated. <a href="https://github.com/theopak/Wumpus-Arduino-Redux_documentation">Open Source</a> web design by <a href="http://theopak.com">Theo Pak</a>. {{ site.meta.updated }}</small>
     </footer>
     {% endif %}
 

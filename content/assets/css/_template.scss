@@ -63,9 +63,9 @@ body>header {
     }
   }
 }
-nav #navbar {
-  margin-top: .5em;
-  padding: 0 20px;
+nav ul#navbar {
+  margin: .5em 20px;
+  padding: 0;
   background-color: transparent;
   color: #FAFAFA;
   &.affix {
@@ -85,13 +85,14 @@ nav #navbar {
     font-weight: bold;
     list-style: none;
     color: $color1;
+    line-height: 1em;
     text-shadow: 0 -1px 0 $color0;
     a, a:visited {
       padding: .25em 0;
       border: none;
       border-top: none !important;
       color: #333;
-      line-height: 1.2em;
+      line-height: 1.5em;
       font-weight: bold;
       text-decoration: none;
       text-shadow: none;
@@ -105,7 +106,7 @@ nav #navbar {
       }
     }
     ul {
-      margin: 0 0 .75em 1em;
+      margin: .2em 0 1em 1em;
       padding: 0;
       a {
         background-color: transparent;
@@ -166,6 +167,7 @@ nav #navbar {
     font-size: 1.3em;
     line-height: 1.2em;
     text-align: justify;
+    text-shadow: 0 -1px 0 $color0;
     text-justify: newspaper;
     #badge {
       position: absolute;
@@ -191,6 +193,19 @@ footer.row {
 
 
 /* RESPONSIVE DESIGN ELEMENTS ============================================= */
+@media (max-width: 979px) {
+  nav ul#navbar {
+    margin: .5em 20px 0 0;
+    max-width: 160px;
+    li ul {
+      margin-bottom: 1.2em;
+      margin-left: 0;
+      li {
+        line-height: 1em;
+      }
+    }
+  }
+}
 @media (max-width: 767px) {
   .affix {
     position: static;
@@ -199,6 +214,7 @@ footer.row {
     margin-left: -20px;
     margin-right: -20px;
     padding-left: 20px;
+    padding-top: 3em;
     padding-right: 20px;
     font-size: .8em;
   }
@@ -221,6 +237,25 @@ footer.row {
     font-size: .8em;
     small {
       background-image: none;
+    }
+  }
+}
+@media (max-width: 700px) {
+  nav ul#navbar {
+    max-width: none;
+    li {
+      float: left;
+      margin: 0 40px 1em 0;
+      width: 140px;
+      min-height: 120px;
+      ul {
+        li {
+          float: none;
+          margin: 0;
+          width: auto;
+          min-height: 0;
+        }
+      }
     }
   }
 }

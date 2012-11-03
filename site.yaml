@@ -42,11 +42,12 @@ context:
         url: doc/index.html
 meta:
   nodemeta: meta.yaml
-  title: "Minds and Machines"
-  author: "Theodore X. Pak et al."
   charset: utf-8
-  description: "This couse is an introduction to the philosophy of mind. Students will debate and write papers on the nature of mind, free will, personal identity, consciousness, artificial intelligence, and animal cognition."
   ga_tracking_code: UA-XXXXXXXXX-X
+  author: "Theodore X. Pak et al."
+  title: "Minds and Machines"
+  description: "This couse is an introduction to the philosophy of mind. Students will debate and write papers on the nature of mind, free will, personal identity, consciousness, artificial intelligence, and animal cognition."
+  updated: "Site updated Fall 2012."
 sorter:
   index:
     attr: meta.index
