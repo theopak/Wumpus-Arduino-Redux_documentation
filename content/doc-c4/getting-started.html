@@ -4,4 +4,78 @@ title: "Getting Started"
 ---
 
 
-to-do
+# Purpose
+
+The Connect 4 Moderator is intended to allow two artificially intelligent computer programs to play Connect 4 against each other, to let an AI play against a human, or to let two people play against each other.
+
+
+<div class="row-fluid">
+  <div class="span6">
+    <h1>Start a Game</h1>
+    <ol>
+      <li>Choose the directory from which to load the programs.</li>
+      <li>Select the desired programs in the boxes labeled "player 1" and "player 2".</li>
+      <li>If a program loads correctly, a ready message is displayed in the output console. Otherwise an error message will be displayed.</li>
+      <li>Click the Go button to begin the game.</li>
+    </ol>
+  </div>
+  <div class="span6">
+    <h1>Manual Mode</h1>
+    <p>Alternatively, either player (or both) can be human controlled. To do so, select "MANUAL" from the desired player's program selection box. The word will be in all-caps, so you know this is the real deal. To place a piece while in manual mode, simply click on the board in the desired column.</p>
+  </div>
+</div>
+
+
+# Creating a Player Bot
+
+* The Connect 4 Moderator can control any program that uses the standard output stream to output data (C++ programs, python programs, java programs, etc...).  It launches the program, then captures its console output.
+* It sends input to the program via standard input just as if a person were sitting at the console
+* Player programs must first output a lowercase "p" character. They should then wait for input indicating who goes first (1 or 2).
+* If 1 is received, the program must output its first move (1 through 7).
+* If 2 is received the player program must output "?" to indicate it is ready.
+* The next input each program will receive will be the number 1-7 indicating the opponents move.
+* They should process this, then output the number of their next move when ready.
+* As soon as it's available, they will be sent the opponents next move and play will continue in this way.
+* Player programs are responsible for keeping track of the board. The only communication between them and the moderator will be a single integer indicating the column of the opponents move.
+* Players are responsible for keeping track of the number of times a column has been played. Playing in a full column will cause the game to end in an error.
+
+
+# End of Game
+
+The game ends when one of the players gets 4 in a row, when it is a tie, or when a player makes an illegal move (e.g. tries to put a piece into a column that is full, or outputs anything other than one of the expected characters).
+
+On a game end condition, your program will be sent one of the following codes:
+
+* 0: ERROR
+* 1: Player 1 wins
+* 2: Player 2 wins
+* 3: Tie game
+
+Your program is expected to exit on receiving one of these codes, but there is no penalty for failing to exit.
+
+
+# Log File
+
+The moderator creates a log file of the game named `log.txt` in its working directory.The log will contain one line for every game played. Each line will contain a string of integers listing each move made during the game. An example is detailed to the right.
+
+    43557644322313
+
+And here is the flow of the actual game:
+
+* **Player One**: 4
+* **Player Two**: 3
+* **Player One**: 5
+* **Player Two**: 5
+* **Player One**: 7
+* **Player Two**: 6
+* **Player One**: 4
+* **Player Two**: 4
+* **Player One**: 3
+* **Player Two**: 2
+* **Player One**: 2
+* **Player Two**: 3
+* **Player One**: 1
+* **Player Two**: 3
+* Player Two Wins
+
+As you can see, the log makes no indication of which player made which move or which player won, it simply lists all the moves in the order they were made. You must determine who was the winner, if there was an error, or if the game ended prematurely. The log can be used for programs that try to learn from past games.
