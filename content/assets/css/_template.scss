@@ -10,12 +10,12 @@
 body {
   min-width: 240px;
   background-color: #F0EFE7;
-  font-family: 'SourceSansPro',Helvetica,Arial,sans-serif;
+  font-family: $font0;
 }
 .container section {
   margin: 0 auto 1em;
-  padding-top: 15px;
   &.well {
+    padding: 30px 40px;
     background-color: #FCFCFA;
     //border: solid 1px #E2E0D8;
     //border-radius: 4px;
@@ -25,7 +25,7 @@ body {
     color: #444;
     text-shadow: 0 2px 0 white;
   }
-  h1:first-child {
+  h1:first-of-type {
     margin-top: 0;
   }
 }
@@ -59,14 +59,16 @@ body>header {
     color: $color0;
     text-decoration: none;
     text-shadow: 0 -1px 0 #FCFCFA;
+    small {
+      text-shadow: none;
+    }
   }
   .row-fluid {
     padding: 2em 0 0;
     background: transparent;
     color: $color0;
     h1, p {
-      font-family: 'Museo Sans',sans-serif;
-      font-size: 2em;
+      font: normal 2em $font1;
       padding: 0;
     }
     p {
@@ -154,21 +156,23 @@ nav #navbar {
   }
   .hero-unit {
     position: relative;
-    margin: -15px -19px 0;
+    margin: -29px -39px 64px;
+    padding: 3.5em 6em;
+    border: none;
+    background-color: $color3;
+    border-bottom: 1px solid darken($color3,5);
+    border-radius: 0;
     font-size: 1.3em;
     line-height: 1.2em;
-    border: none;
-    border-bottom: 1px solid #E2E0D8;
-    border-radius: 0;
-    i.gen-enclosed {
+    text-align: justify;
+    text-justify: newspaper;
+    #badge {
       position: absolute;
-      bottom: -40px;
+      bottom: -32px;
       left: 0;
       width: 100%;
-      color: #333;
-      font-size: 50px;
-      line-height: 50px;
-      text-align: center;
+      height: 64px;
+      background: transparent url('http://placehold.it/64x64') no-repeat center;
     }
   }
 }

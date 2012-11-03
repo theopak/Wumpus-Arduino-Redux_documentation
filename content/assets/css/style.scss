@@ -10,7 +10,10 @@
 /* === SASS PREPROCESSOR ==================================================== */
 $color0     : #fafafa;  // bg color
 $color1     : #333;     // fg color
-$color2     : #08C;     // accent color
+$color2     : #08C;     // highlight color
+$color3     : #FCF8E3;  // accent color
+$font0      : 'SourceSanePro',Helvetica,Arial,sans-serif;
+$font1      : 'Museo Sans',Arial,sans-serif;
 @mixin filter($var) {
        -o-filter: $var;
       -ms-filter: $var;
