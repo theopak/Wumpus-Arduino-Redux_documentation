@@ -155,6 +155,7 @@ nav ul#navbar {
   padding-bottom: 10px;
   h1, h2, h3, h4, h5 {
     font-size: 1.3em;
+    line-height: 1.2em;
   }
   .hero-unit {
     position: relative;
@@ -216,7 +217,28 @@ footer.row {
     padding-left: 20px;
     padding-top: 3em;
     padding-right: 20px;
-    font-size: .8em;
+    font-size: .9em;
+    h1 {
+      font-size: 2em;
+    }
+  }
+  nav ul#navbar {
+    margin-right: 0;
+    max-width: none;
+    li {
+      float: left;
+      margin: 0 5% 1em 0;
+      width: 20%;
+      min-height: 120px;
+      ul {
+        li {
+          float: none;
+          margin: 0;
+          width: auto;
+          min-height: 0;
+        }
+      }
+    }
   }
   .container section {
     &.well {
@@ -230,7 +252,11 @@ footer.row {
     .hero-unit {
       margin: -14px -19px 45px;
       padding: 2em 4em;
-      font-size: 1em;
+      font-size: 1.2em;
+      p {
+        font-size: 1em;
+        line-height: 1.6em;
+      }
     }
   }
   footer.row {
@@ -240,22 +266,25 @@ footer.row {
     }
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 480px) {
+  body>header {
+    font-size: .8em;
+  }
   nav ul#navbar {
-    max-width: none;
     li {
-      float: left;
-      margin: 0 40px 1em 0;
-      width: 140px;
+      margin: 0 5% 1em 0;
+      width: 45%;
       min-height: 120px;
-      ul {
-        li {
-          float: none;
-          margin: 0;
-          width: auto;
-          min-height: 0;
-        }
-      }
+    }
+  }
+  .row, .row-fluid {
+    h1, h2, h3, h4, h5 {
+      font-size: 1.1em;
+    }
+    .hero-unit {
+      padding: 20px 20px 30px;
+      font-size: 1.1em;
+      text-align: left;
     }
   }
 }
