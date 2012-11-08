@@ -1,13 +1,10 @@
-# Wumpus-Arduino-Redux_documentation
+# About This Project
 
-The [Wumpus-Arduino-Redux](https://github.com/AsherGlick/Wumpus-Arduino-Redux) project is an open-source hardware schematic and basic API used by the Department of Cognitive Science at Rensselaer Polytechnic Institute. Students in the _Minds & Machines_ course that select the robotics option as their final project are given the WAR platform so that they may focus their design process on the physical form of their robotic agent and the algorithmic solution to the "Wumpus World" problem rather than the low-level electrical engineering and computer science topics that such a robotics project requires.
+The website in this repository was developed at the request of the Department of Cognitive Science at Rensselaer Polytechnic Institute. It documents the _Minds & Machines_ course, including use of the WAR API and Connect 4 Moderator for final projects.
 
+Wumpus-Arduino-Redux is an open-source hardware schematic and API, provided as an electrical and programming platform so that students may focus their efforts on the design of their robotic agent and their algorithmic solution to the "Wumpus World" problem rather than the low-level electrical engineering and computer science topics that such a robotics project requires.
 
-## About This Website
-
-The website in this repository documents the _Minds & Machines_ course at RPI, including use of the WAR API and Connect 4 Moderator for final projects.
-
-This website is built using the [hyde](https://github.com/hyde/hyde) static site generator and deployed as html files. The SASS preprocessor built the provided `style.css` stylesheet using the included `*.scss` files. This project is licensed for free use and distribution, including modification.
+This website was developed with the [hyde](https://github.com/hyde/hyde) static site generator and then deployed as html files. The SASS preprocessor builds `style.css` stylesheet using the included `*.scss` files. This project is licensed for free use and distribution, including modification.
 
 ```bash
 # Build this site using hyde by running this bash from the top level directory.
@@ -20,38 +17,22 @@ $ hyde serve # optional, this command tests deploy on localhost:8080
 
 ## Project Members
 
-### [WAR](https://github.com/AsherGlick/Wumpus-Arduino-Redux) API
-
-Asher Glick
-
-<glicka@rpi.edu>
-
-Rensselaer Polytechnic Institute Class of 2013
-
-GitHub: AsherGlick
-
-### [WAR](https://github.com/AsherGlick/Wumpus-Arduino-Redux) PCB
-
-David Herbert
-
-<herbed@rpi.edu>
-
-Rensselaer Polytechnic Institute Class of 2013
-
-### Documentation Website
-
-Theodore X. Pak
-
-<mail@theopak.com>
-
-Renssleaer Polytechnic Institute Class of 2015
-
-GitHub: theopak
+* **Website** - Theodore X. Pak
+  - <mail@theopak.com>
+  - Rensselaer Polytechnic Institute Class of 2015
+  - GitHub: theopak
+* **[WAR API](https://github.com/AsherGlick/Wumpus-Arduino-Redux) Documentation** - Asher Glick
+  - <glicka@rpi.edu>
+  - Rensselaer Polytechnic Institute Class of 2013
+  - GitHub: AsherGlick
+* **[Connect 4 Moderator](https://github.com/Moomaster36/ConnectFourModerator) Documentation** - Dan Bulger
+  - Rensselaer Polytechnic Institute Class of 2015
+  - GitHub: daniel-bulger
 
 
 ## License
 
-    Copyright (c) 2012, Theodore X. Pak, et al., except as indicated
+    Copyright (c) 2012, Theodore X. Pak et al., except as indicated
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
