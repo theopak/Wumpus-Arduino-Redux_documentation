@@ -28,3 +28,62 @@
     }
   }
 }
+
+
+
+/*
+// For some reason, SASS really hates this next line...
+.prettyprint {
+﻿  margin: 1em auto;
+﻿  padding: 1em;
+﻿  background-color: black;
+﻿  border-radius: 8px;
+﻿  width: 95%;
+﻿  white-space: pre-wrap;
+}
+*/
+pre, code {
+  .atn { color: #bdb76b; }
+  .atv { color: #65B042; }
+  .clo { color: #660; }
+  .com { color: #AEAEAE; font-style: italic; }
+  .dec { color: #3387CC; }
+  .fun { color: red; }
+  .kwd { color: #E28964; }
+  .lit { color: #3387CC; }
+  .opn { color: #660; }
+  .pln { color: #fff; }
+  .pun { color: #fff; }
+  .str { color: #65B042; }
+  .tag { color: #89bdff; }
+  .typ { color: #89bdff; }
+  .var { color: #606; }
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  // IE indents via margin-left
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #AEAEAE;
+}
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+@media print, projection {
+  pre, code {
+    .atn { color: #404; }
+    .atv { color: #060; }
+    .str { color: #060; }
+    .clo { color: #440; }
+    .com { color: #600; font-style: italic; }
+    .kwd { color: #006; font-weight: bold; }
+    .lit { color: #044; }
+    .opn { color: #440; }
+    .pln { color: #000; }
+    .pun { color: #440; }
+    .tag { color: #006; font-weight: bold; }
+    .typ { color: #404; font-weight: bold; }
+  }
+}

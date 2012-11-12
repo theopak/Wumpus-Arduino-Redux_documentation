@@ -6,117 +6,56 @@
  */
 
 
-/* --- Helper Classes ----------------------------------------------------------------------------------------------- */
-.hide { display: none; visibility: hidden; }
-.center { display: block; margin: 0 auto; }
-.full, .half, .twothird, .third {
-  float: left;
-  display: block;
-  margin: 0 auto;
-  width: auto;
-  height: 100%;
-}
-.full     { width: 100%; float: none; clear: both; }
-.half     { width:  50%; }
-.twothird { width:  66%; }
-.third    { width:  33%; }
+/* --- Google Code Prettify ----------------------------------------------------------------------------------------- */
 
-
-/* --- Commonly Used ------------------------------------------------------------------------------------------------ */
-a.button {
-  display: block;
-  margin: 15px auto;
-  padding: 5px 15px;
-  border: 1px solid #BAAC96;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  background: #E7D8BB url(../img/zurb_overlay.png) repeat-x center top;
-  text-decoration: none;
-  color: #333;
-  text-align: center;
-  text-shadow: 0 -1px 0 white;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px;
-  -webkit-transition: box-shadow .2s linear;
-  clear: none;
+pre.prettyprint, code.prettyprint {
+﻿  margin: 1em auto;
+﻿  padding: 1em;
+﻿  background-color: black;
+﻿  border-radius: 8px;
+﻿  width: 95%;
+﻿  white-space: pre-wrap;
 }
-a.button:hover {
-  color: black;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px;
-}
-.modal {
-  cursor: pointer;
+pre, code {
+  .atn { color: #bdb76b; }
+  .atv { color: #65B042; }
+  .clo { color: #660; }
+  .com { color: #AEAEAE; font-style: italic; }
+  .dec { color: #3387CC; }
+  .fun { color: red; }
+  .kwd { color: #E28964; }
+  .lit { color: #3387CC; }
+  .opn { color: #660; }
+  .pln { color: #fff; }
+  .pun { color: #fff; }
+  .str { color: #65B042; }
+  .tag { color: #89bdff; }
+  .typ { color: #89bdff; }
+  .var { color: #606; }
 }
 
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE; } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
 
-/* --- Contact Info and Social Media -------------------------------------------------------------------------------- */
-.vcard, .vcard[itemscope] {
-  margin: 45px 10px 0;
-  img {
-    float: left;
-    margin: 0 10px 0 25px;
-    padding: 2px;
-    background-color: #DDD;
-    border: 1px solid #999;
-    border-radius: 3px;
-  }
-  h2 {
-    padding-top: .4em;
-    font: 1.2em/1.2em Arial;
-  }
-  a {
-    text-decoration: none;
-    color: #333;
-  }
-  a:hover { color: #5AB0D4; }
-  ul {
-    margin: 25px 10px 0 70px;
-    padding: 0;
-    list-style: none;
-    li {
-      padding: 0 0 0 25px;
-      background: transparent no-repeat left center;
-      line-height: 1.4em;
-      overflow: hidden;
-      a {
-        width: 100%;
-        line-height: 1.4em;
-      }
-    }
-    li:nth-child(1) { background-image: url(../img/icondock_google-plus-black.png); }
-    li:nth-child(2) { background-image: url(../img/icondock_facebook.png); }
-    li:nth-child(3) { background-image: url(../img/icondock_linkedin.png); }
+@media print, projection {
+  pre, code {
+    .atn { color: #404; }
+    .atv { color: #060; }
+    .str { color: #060; }
+    .clo { color: #440; }
+    .com { color: #600; font-style: italic; }
+    .kwd { color: #006; font-weight: bold; }
+    .lit { color: #044; }
+    .opn { color: #440; }
+    .pln { color: #000; }
+    .pun { color: #440; }
+    .tag { color: #006; font-weight: bold; }
+    .typ { color: #404; font-weight: bold; }
   }
 }
-
-
-/* --- Modal -------------------------------------------------------------------------------------------------------- */
-#colorbox,#cboxOverlay,#cboxWrapper         { position:absolute; left:0; top:0; z-index:9999; overflow:hidden; }
-#cboxLoadingOverlay,#cboxLoadingGraphic       { position:absolute; left:0; top:0; width:100%; height:100% ;}
-#cboxOverlay                    { position:fixed; width:100%; height:100%; background:#000; }
-#cboxContent                    { position:relative; margin-bottom: 80px; padding: 5px; }
-#cboxMiddleLeft,#cboxBottomLeft           { clear:left; }
-#cboxLoadedContent                  { overflow:auto; overflow-x: hidden; }
-#cboxPrevious,#cboxNext,#cboxClose,#cboxSlideshow { cursor:pointer; }
-.cboxPhoto                      { float:left; margin:auto; border:0; display:block; }
-.cboxIframe                     { width:100%; height:100%; display:block; border:0; }
-#colorbox {}
-    #cboxContent {}
-        .cboxIframe{background:#fff;}
-        #cboxError{padding:50px; border:1px solid #ccc;}
-        #cboxCurrent{position:absolute; top:-20px; right:0px; color:#ccc;}
-        #cboxTitle  { padding-top: 15px; font: 1.5em/1.2em 'Museo Sans',sans; color: white; }
-        #cboxSlideshow{position:absolute; top:-20px; right:90px; color:#fff;}
-        #cboxPrevious{position:absolute; top:50%; left:5px; margin-top:-32px;
-          background:url(../img/colorbox/controls.png) no-repeat top left; width:28px; height:65px; text-indent:-9999px;}
-        #cboxPrevious:hover{background-position:bottom left;}
-        #cboxNext{position:absolute; top:50%; right:5px; margin-top:-32px;
-          background:url(../img/colorbox/controls.png) no-repeat top right; width:28px; height:65px; text-indent:-9999px;}
-        #cboxNext:hover{background-position:bottom right;}
-        #cboxLoadingOverlay{background:#000;}
-        #cboxLoadingGraphic{background:url(../img/colorbox/loading.gif) no-repeat center center;}
-        #cboxClose{display:none;visibility:hidden;}
 
 
 /* --- CSS Animations ----------------------------------------------------------------------------------------------- */
@@ -126,6 +65,6 @@ a.button:hover {
 }
 @-webkit-keyframes 'scrollin' {
   0%    { opacity: 0; bottom:  0px; -webkit-animation-timing-function: ease-out; }
-  65%    { opacity: 0; bottom: 15px; }
+  65%   { opacity: 0; bottom: 15px; }
   100%  { opacity: 1; bottom: 40px; -webkit-animation-timing-function: ease-out; }
 }
