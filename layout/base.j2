@@ -11,6 +11,7 @@
   <meta name="description" content="{{ resource.meta.description }}">
 
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="shortcut icon" href="{{ content_url('') }}favicon.ico">
 
   <link rel="stylesheet" href="{{ media_url('css/style.css') }}">
   <script src="{{ media_url('js/modernizr-2.6.1.min.js') }}"></script>
@@ -24,7 +25,7 @@
   <header>
     <div class="container">
       {% block header -%}<h1><a href="{{ content_url('index.html') }}">Minds &amp; Machines <small class="hidden-phone">IHSS-1964/PHIL-1120</small></a></h1>{%- endblock header %}
-      {% block hero -%}{%- endblock hero %}
+      {% block hero %}{% endblock hero %}
     </div>
   </header>
 
@@ -34,9 +35,8 @@
 
     <article role="main" class="row-fluid">
       <nav class="span3">
-        <ul id="navbar" class="unstyled clearfix" role="navigation" data-spy="affix" data-offset-top="189">
+        <ul id="navbar" class="unstyled clearfix" role="navigation" data-spy="affix" data-offset-top="{% if resource.slug=="index" %}337{% else %}189{% endif %}">
           {% block nav -%}
-          <!--<h1>M&amp;M &raquo; Wumpus World</h1>-->
           {% for grp, res_walker in site.content.walk_section_groups() %}
           {% if not (grp.description == "Site Section") -%}
           <li{% if (grp.name == resource.meta.section) %} class="active"{% endif -%}>
@@ -65,7 +65,7 @@
     {% if not resource.meta.title.startswith('Error') %}
     <footer class="row">
       <span class="span3 hidden-phone">&nbsp;</span>
-      <small class="span9">Content &copy; 2012 Bram et al., except as indicated. <a href="https://github.com/theopak/Wumpus-Arduino-Redux_documentation">Open Source</a> web design by <a href="http://theopak.com">Theo Pak</a>. {{ site.meta.updated }}</small>
+      <small class="span9">Content &copy; 2012 Bram et al., except as indicated. <a href="https://github.com/theopak/Wumpus-Arduino-Redux_documentation">Open Source</a> web design by <a href="http://theopak.com">Theo Pak</a>. {{ site.meta.footer }}</small>
     </footer>
     {% endif %}
 
@@ -85,7 +85,7 @@
   {% if site.config.mode=="production" %}
     <script>
       var _gaq=[['_setAccount','{{ site.meta.ga_tracking_code }}'],['_trackPageview']];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];//g.async=true;
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
